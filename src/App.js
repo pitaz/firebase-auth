@@ -1,18 +1,21 @@
 import React, {Component} from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import firebase from 'firebase';
+import env from 'react-native-config'
 import { Header } from './components/common';
+import LoginForm from './components/LoginForm';
+
 
 class App extends Component {
   componentDidMount() {
     firebase.initializeApp({
-      apiKey: 'AIzaSyCgmKs60eyTJ5-NSq32tcMeRT7HjoaAd3M',
+      apiKey: env.apiKey,
       authDomain: 'authentication-c6904.firebaseapp.com',
       databaseURL: 'https://authentication-c6904.firebaseio.com',
-      projectId: 'authentication-c6904',
+      projectId: env.projectId,
       storageBucket: '',
-      messagingSenderId: '1040918185841',
-      appId: '1:1040918185841:web:1a981e1ac8f9000d'
+      messagingSenderId: env.messagingSenderId,
+      appId: env.appId
     });
   }
 
@@ -20,7 +23,7 @@ class App extends Component {
     return (
       <View>
         <Header headerText="Authentication" /> 
-        <Text>An app!</Text>
+        <LoginForm />
       </View>
     );
   }
