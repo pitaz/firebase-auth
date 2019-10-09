@@ -1,2 +1,2 @@
-# firebase-react-native
+# firebase-auth
 A simple react native firebase authentication app
